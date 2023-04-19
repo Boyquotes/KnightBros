@@ -1,2 +1,2 @@
 # KnightBros
-Godot Files
+Godot Files for the game
