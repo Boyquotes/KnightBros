@@ -1,11 +1,27 @@
-[gd_scene format=2]
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://font-1.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scenes/class_picker/Spear_guy_button.gd" type="Script" id=2]
+[ext_resource path="res://artwork/character_art_1.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 68
+font_data = ExtResource( 1 )
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Label" type="Label" parent="."]
-margin_left = 306.0
-margin_top = 197.0
-margin_right = 761.0
-margin_bottom = 363.0
-text = "Im done for night
-"
+[node name="spear_guy" type="TextureButton" parent="."]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_scale = Vector2( 4, 4 )
+texture_normal = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="spear_guy_label" type="RichTextLabel" parent="."]
+margin_top = 300.0
+margin_right = 291.0
+margin_bottom = 375.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "spear guy"
+
+[connection signal="button_down" from="spear_guy" to="spear_guy" method="_on_spear_guy_button_down"]
